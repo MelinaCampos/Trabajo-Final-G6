@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import TaskList from './components/TaskList/TaskList'
 import TaskForm from './components/TaskForm/TaskForm'
 
-
 const App = () => {
 
   const [tareas, setTareas] = useState(() => {
