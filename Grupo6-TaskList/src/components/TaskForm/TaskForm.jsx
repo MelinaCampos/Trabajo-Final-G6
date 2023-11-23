@@ -16,7 +16,7 @@ const TaskForm = ({ onAgregarTarea }) => { // se pasa la prop desde el app de la
         }
 
         onAgregarTarea(nombreTarea);
-        setNombreTarea(''); //limpia el label una vez enviado
+        setNombreTarea(''); //limpia el input una vez enviado
     };
 
     return (
