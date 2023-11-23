@@ -1,26 +1,26 @@
 import React, { useState } from 'react'
 
-const TaskForm = ({ onAgregarTarea }) => {
+const TaskForm = ({ onAgregarTarea }) => { // se pasa la prop desde el app de la funcion para agregar las tareas
     const [nombreTarea, setNombreTarea] = useState('');
 
     const handleChange = (e) => {
-        setNombreTarea(e.target.value);
+        setNombreTarea(e.target.value); //setea el nombre de la tarea con el input del formulario
     };
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (nombreTarea.trim() === '') {
+        if (nombreTarea.trim() === '') { //evita que se agreguen tareas vacias
             return;
         }
 
         onAgregarTarea(nombreTarea);
-        setNombreTarea('');
+        setNombreTarea(''); //limpia el label una vez enviado
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>  //evento que ejecuta la funcion "handlesubmit" para que se ejecute cuando se envia la tarea
             <label>
                 Nueva Tarea:
                 <input type="text" value={nombreTarea} onChange={handleChange} />
