@@ -5,11 +5,7 @@ import TaskForm from './components/TaskForm/TaskForm'
 
 
 const App = () => {
-  //const [tareas, setTareas] = useState(() => {
-    //Inicialización de localStorage o un array vacio.
-  //  const storedTareas = JSON.parse(localStorage.getItem('tareas'));
-  //  return storedTareas || [];
-  //});
+
   const [tareas, setTareas] = useState(() => {
     //Inicialización de localStorage o un array vacio.
     const storedTareas = JSON.parse(localStorage.getItem('tareas'));
