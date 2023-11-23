@@ -3,7 +3,7 @@ import  TaskItem  from '../TaskItem/TaskItem'
 
 const TaskList = ({ tareas, onToggleCompletar, onEliminar }) => {
     return (
-      <div>
+      <div> //iterando sobre el array tareas para generar el conjunto de elementos TaskItem con el contenido del array
         {tareas.map((tarea) => (
           <TaskItem
             key={tarea.id}
