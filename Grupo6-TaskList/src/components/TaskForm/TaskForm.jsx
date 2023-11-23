@@ -20,7 +20,7 @@ const TaskForm = ({ onAgregarTarea }) => { // se pasa la prop desde el app de la
     };
 
     return (
-        <form onSubmit={handleSubmit}>  //evento que ejecuta la funcion "handlesubmit" para que se ejecute cuando se envia la tarea
+        <form onSubmit={handleSubmit}>  //evento que ejecuta la funcion handlesubmit para que se ejecute cuando se envia la tarea
             <label>
                 Nueva Tarea:
                 <input type="text" value={nombreTarea} onChange={handleChange} />
