@@ -125,7 +125,7 @@ const App = () => {
         >Mostrar tareas eliminadas</Button>
         
       </Grid>
-      <Grid container item rowSpacing={1} justifyContent='center' xs={12}>
+      <Grid container item rowSpacing={1} justifyContent='center'>
         <TaskList
           tareas={tareas}
           onToggleCompletar={handleToggleCompletar}

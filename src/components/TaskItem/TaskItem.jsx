@@ -23,7 +23,7 @@ const TaskItem = ({ nombre, completada, onToggleCompletar, onEliminar }) => {
       sx={{ p:1, borderRadius:4, bgcolor: '#1565c0', m:1 }}
     >
       
-      <Grid xs={6} md={1}>
+      <Grid item xs={6} md={1}>
         <ToggleButton // agrega un checkbox que cuando cambie ejecute la funcion que permite que cambie el estado de completada de la tarea
           value=""
           selected={completada}
@@ -33,10 +33,10 @@ const TaskItem = ({ nombre, completada, onToggleCompletar, onEliminar }) => {
           <CheckIcon />
         </ToggleButton>
       </Grid>
-      <Grid container alignItems='center' xs={12} md={9} sx={{color: 'white'}} >
+      <Grid item alignItems='center' xs={12} md={9} sx={{color: 'white'}} >
         <span style={{ fontSize: "1.15rem", margin:'auto' }}>{nombre.length > 20 ? `${nombre.slice(0, 20)}...` : nombre}</span>
       </Grid>
-      <Grid xs={6} md={2}>
+      <Grid item xs={6} md={2}>
         <Button
           size="medium"
           color="error"
