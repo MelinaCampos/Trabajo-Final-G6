@@ -2,7 +2,7 @@ import './App.css'
 import React, { useEffect, useState } from 'react'
 import TaskList from './components/TaskList/TaskList'
 import TaskForm from './components/TaskForm/TaskForm'
-import { Grid, Typography } from '@mui/material'
+import { Grid, Typography, Button } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import { v4 as uuidv4 } from 'uuid'
 
@@ -109,21 +109,24 @@ const App = () => {
       </Grid>
       <Grid item xs={12}>
         <TaskForm onAgregarTarea={agregarTarea} />
-        <Typography variant="h6">Tareas Eliminadas</Typography>
-        <button onClick={mostrarTareasEliminadas}>Mostrar Tareas Eliminadas</button>
       </Grid>
       <Grid item xs={12}>
+        <Typography variant="h6">Tareas Eliminadas</Typography>
+        <Button variant="contained" size="small" onClick={mostrarTareasEliminadas}>Mostrar tareas eliminadas</Button>
+        {/* <button onClick={mostrarTareasEliminadas}>Mostrar Tareas Eliminadas</button> */}
+      </Grid>
+      <Grid container item rowSpacing={1} justifyContent='center' xs={12}>
         <TaskList
           tareas={tareas}
           onToggleCompletar={handleToggleCompletar}
           onEliminar={handleEliminar}
         />
       </Grid>
-        <footer><h6>
-          <GitHubIcon/><a href='https://github.com/MelinaCampos' target='_blank'>Meli</a></h6>
-          <h6><GitHubIcon/><a href='https://github.com/g0blin1983' target='_blank'>Gabriel</a></h6>
-          <h6><GitHubIcon/><a href='https://github.com/LautaroScherer' target='_blank'>Sebastian</a></h6>
-        </footer>
+      <footer>
+        <h6><GitHubIcon/><a href='https://github.com/MelinaCampos' target='_blank'>Meli</a></h6>
+        <h6><GitHubIcon/><a href='https://github.com/g0blin1983' target='_blank'>Gabriel</a></h6>
+        <h6><GitHubIcon/><a href='https://github.com/LautaroScherer' target='_blank'>Sebastian</a></h6>
+      </footer>
     </Grid>
   );
 };

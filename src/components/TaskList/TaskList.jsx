@@ -1,10 +1,12 @@
-import React from 'react'
-import  TaskItem  from '../TaskItem/TaskItem'
+import React from "react";
+import TaskItem from "../TaskItem/TaskItem";
+import { Grid } from "@mui/material";
 
 const TaskList = ({ tareas, onToggleCompletar, onEliminar }) => {
-    return (
-      //iterando sobre el array tareas para generar el conjunto de elementos TaskItem con el contenido del array
-      <div>
+  return (
+    //iterando sobre el array tareas para generar el conjunto de elementos TaskItem con el contenido del array
+    <Grid container spacing={{md:3}} md={10}>
+      <Grid item md={12}>
         {tareas.map((tarea) => (
           <TaskItem
             key={tarea.id}
@@ -14,8 +16,9 @@ const TaskList = ({ tareas, onToggleCompletar, onEliminar }) => {
             onToggleCompletar={() => onToggleCompletar(tarea.id)}
           />
         ))}
-      </div>
-    );
-  };
-  
-  export default TaskList;
+      </Grid>
+    </Grid>
+  );
+};
+
+export default TaskList;
