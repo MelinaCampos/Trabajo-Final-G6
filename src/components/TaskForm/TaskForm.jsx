@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, TextField } from "@mui/material";
+import { Button, TextField, Grid } from "@mui/material";
 
 const TaskForm = ({ onAgregarTarea }) => { // se pasa la prop desde el app de la funcion para agregar las tareas
     const [nombreTarea, setNombreTarea] = useState('');
@@ -23,16 +23,22 @@ const TaskForm = ({ onAgregarTarea }) => { // se pasa la prop desde el app de la
     return (
         //evento que ejecuta la funcion handlesubmit para que se ejecute cuando se envia la tarea
         <form onSubmit={handleSubmit}>
-            <label>
-                <TextField
-                    size="small"
-                    label="Nueva Tarea"
-                    value={nombreTarea}
-                    onChange={handleChange}
-                    sx={{ width: '40%', bgcolor: 'white' }}
-                />
-            </label>
-            <Button size="small" color="primary" variant="contained" type="submit" sx={{ p: 1 }}>Agregar Tarea</Button>
+            <Grid container spacing={0}>
+              <Grid item xs={12}>
+                <label>
+                    <TextField
+                        size="small"
+                        label="Nueva Tarea"
+                        value={nombreTarea}
+                        onChange={handleChange}
+                        sx={{ width: '40%', bgcolor: 'white' }}
+                    />
+                </label>
+              </Grid>
+              <Grid item xs={12}>
+                <Button size="small" color="primary" variant="contained" type="submit" sx={{ p: 1, width: '40%' }}>Agregar Tarea</Button>
+              </Grid>
+            </Grid>
         </form>
     );
 };
