@@ -4,6 +4,7 @@ import TaskList from './components/TaskList/TaskList'
 import TaskForm from './components/TaskForm/TaskForm'
 import { Grid, Typography } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { v4 as uuidv4 } from 'uuid';
 
 const App = () => {
 
@@ -39,7 +40,7 @@ const App = () => {
     }
 
     const nuevaTarea = {
-      id: tareas.length + 1,
+      id: id: uuidv4(),
       nombre: nombreTarea,
       completada: false,
     };
