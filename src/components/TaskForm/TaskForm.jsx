@@ -27,7 +27,7 @@ const TaskForm = ({ onAgregarTarea }) => { // se pasa la prop desde el app de la
               <Grid item xs={12}>
                 <label>
                     <TextField
-                        size="small"
+                        size="medium"
                         label="Nueva Tarea"
                         value={nombreTarea}
                         onChange={handleChange}
@@ -36,7 +36,7 @@ const TaskForm = ({ onAgregarTarea }) => { // se pasa la prop desde el app de la
                 </label>
               </Grid>
               <Grid item xs={12}>
-                <Button size="small" color="primary" variant="contained" type="submit" sx={{ p: 1, width: '40%' }}>Agregar Tarea</Button>
+                <Button size="large" color="primary" variant="contained" type="submit" sx={{ p: 1, width: '40%' }}>Agregar Tarea</Button>
               </Grid>
             </Grid>
         </form>
