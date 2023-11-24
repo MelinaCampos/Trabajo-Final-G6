@@ -40,7 +40,7 @@ const App = () => {
     }
 
     const nuevaTarea = {
-      id: id: uuidv4(),
+      id: uuidv4(),
       nombre: nombreTarea,
       completada: false,
     };
