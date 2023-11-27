@@ -3,7 +3,10 @@ import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CheckIcon from "@mui/icons-material/Check";
 import ToggleButton from "@mui/material/ToggleButton";
-import { Grid, TextField } from "@mui/material";
+import { Grid, TextField, IconButton } from "@mui/material";
+import EditNoteIcon from '@mui/icons-material/EditNote';
+import SaveRoundedIcon from '@mui/icons-material/SaveRounded';
+import CancelPresentationRoundedIcon from '@mui/icons-material/CancelPresentationRounded';
 
 const TaskItem = ({
   tareaId,
@@ -53,15 +56,15 @@ const TaskItem = ({
         <>
           <Grid item alignItems="center" xs={12} md={9} sx={{ color: "white" }}>
             <TextField
-              size="medium"
+              size="small"
               label="Editar Tarea"
               value={editadoNombreTarea}
               onChange={handleCambiarInput}
-              sx={{ width: "40%", bgcolor: "white" }}
+              sx={{ width: "40%" }}
             />
           </Grid>
           <Grid item xs={6} md={2}>
-            <Button
+            {/* <Button
               size="medium"
               color="success"
               variant="contained"
@@ -82,7 +85,13 @@ const TaskItem = ({
               startIcon={<DeleteIcon />}
             >
               Cancelar
-            </Button>
+            </Button> */}
+            <IconButton aria-label="Guardar" onClick={handleGuardar}>
+              <SaveRoundedIcon />
+            </IconButton>
+            <IconButton aria-label="Cancelar" onClick={handleCancelarEditar}>
+              <CancelPresentationRoundedIcon />
+            </IconButton>
           </Grid>
         </>
       ) : (
@@ -103,7 +112,7 @@ const TaskItem = ({
             </span>
           </Grid>
           <Grid item xs={6} md={2}>
-            <Button
+            {/* <Button
               size="medium"
               color="error"
               variant="contained"
@@ -112,7 +121,6 @@ const TaskItem = ({
               onClick={onEliminar}
               startIcon={<DeleteIcon />}
             >
-              Eliminar
             </Button>
             <Button
               size="medium"
@@ -121,10 +129,15 @@ const TaskItem = ({
               type="submit"
               sx={{ p: 1 }}
               onClick={handleEditar}
-              startIcon={<DeleteIcon />}
+              startIcon={<EditNoteIcon />}
             >
-              Editar
-            </Button>
+            </Button> */}
+            <IconButton aria-label="Editar Tarea" onClick={handleEditar}>
+              <EditNoteIcon />
+            </IconButton>
+            <IconButton aria-label="Eliminar Tarea" onClick={onEliminar}>
+              <DeleteIcon />
+            </IconButton>
           </Grid>
         </>
       )}
