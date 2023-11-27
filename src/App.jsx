@@ -5,6 +5,7 @@ import TaskForm from './components/TaskForm/TaskForm'
 import { Grid, Typography, Button } from '@mui/material'
 import { v4 as uuidv4 } from 'uuid'
 import DeleteIcon from '@mui/icons-material/Delete';
+import TaskItem from './components/TaskItem/TaskItem'
 
 const App = () => {
 
@@ -92,6 +93,14 @@ const App = () => {
     alert("Tareas eliminadas:\n" + tareasEliminadas.map(tarea => tarea.nombre).join('\n'));
   };
 
+  const handleEditar = (tareaId, tareaEditada) => {
+    setTareas((tareasPrevias) =>
+      tareasPrevias.map((tarea) =>
+        tarea.id === tareaId ? { ...tarea, nombre: tareaEditada } : tarea
+      )
+    );
+  };
+
   return (
     <Grid container spacing={3} sx={{ boxShadow: 3,bgcolor: '#e6fcff' }}style={{
       margin: 'auto',
@@ -130,6 +139,7 @@ const App = () => {
           tareas={tareas}
           onToggleCompletar={handleToggleCompletar}
           onEliminar={handleEliminar}
+          onEditar={handleEditar}
         />
       </Grid>
     </Grid>
