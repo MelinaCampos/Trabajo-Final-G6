@@ -5,7 +5,6 @@ import TaskForm from './components/TaskForm/TaskForm'
 import { Grid, Typography, Button } from '@mui/material'
 import { v4 as uuidv4 } from 'uuid'
 import DeleteIcon from '@mui/icons-material/Delete';
-import TaskItem from './components/TaskItem/TaskItem'
 
 const App = () => {
 
