@@ -59,10 +59,8 @@ const TaskItem = ({
               label="Editar Tarea"
               value={editadoNombreTarea}
               onChange={handleCambiarInput}
-              sx={{ width: "40%" }}
-              variant="outlined"
-              bgcolor="primary"
-            />
+              sx={{ width: "40%", backgroundColor: "Highlight" }}
+              />
           </Grid>
           <Grid item xs={6} md={2}>
             <IconButton aria-label="Guardar" onClick={handleGuardar}>
