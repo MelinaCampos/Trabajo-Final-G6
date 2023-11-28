@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TaskItem from "../TaskItem/TaskItem";
 import { Grid } from "@mui/material";
 
@@ -13,13 +13,12 @@ const TaskList = ({ tareas, onToggleCompletar, onEliminar, onEditar }) => {
       <Grid item xs={12}>
         {tareas.map((tarea) => (
           <TaskItem
-            key={tarea.id}
+            tareaId={tarea.id}
             nombre={tarea.nombre}
             completada={tarea.completada}
             onEliminar={() => onEliminar(tarea.id)}
             onToggleCompletar={() => onToggleCompletar(tarea.id)}
             onEditar={handleEdit}
-            tareaId={tarea.id}
           />
         ))}
       </Grid>

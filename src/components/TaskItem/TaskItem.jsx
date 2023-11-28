@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CheckIcon from "@mui/icons-material/Check";
 import ToggleButton from "@mui/material/ToggleButton";
@@ -61,31 +60,11 @@ const TaskItem = ({
               value={editadoNombreTarea}
               onChange={handleCambiarInput}
               sx={{ width: "40%" }}
+              variant="outlined"
+              bgcolor="primary"
             />
           </Grid>
           <Grid item xs={6} md={2}>
-            {/* <Button
-              size="medium"
-              color="success"
-              variant="contained"
-              type="submit"
-              sx={{ p: 1 }}
-              onClick={handleGuardar}
-              startIcon={<CheckIcon />}
-            >
-              Guardar
-            </Button>
-            <Button
-              size="medium"
-              color="error"
-              variant="contained"
-              type="submit"
-              sx={{ p: 1 }}
-              onClick={handleCancelarEditar}
-              startIcon={<DeleteIcon />}
-            >
-              Cancelar
-            </Button> */}
             <IconButton aria-label="Guardar" onClick={handleGuardar}>
               <SaveRoundedIcon />
             </IconButton>
@@ -112,26 +91,6 @@ const TaskItem = ({
             </span>
           </Grid>
           <Grid item xs={6} md={2}>
-            {/* <Button
-              size="medium"
-              color="error"
-              variant="contained"
-              type="submit"
-              sx={{ p: 1 }}
-              onClick={onEliminar}
-              startIcon={<DeleteIcon />}
-            >
-            </Button>
-            <Button
-              size="medium"
-              color="error"
-              variant="contained"
-              type="submit"
-              sx={{ p: 1 }}
-              onClick={handleEditar}
-              startIcon={<EditNoteIcon />}
-            >
-            </Button> */}
             <IconButton aria-label="Editar Tarea" onClick={handleEditar}>
               <EditNoteIcon />
             </IconButton>
