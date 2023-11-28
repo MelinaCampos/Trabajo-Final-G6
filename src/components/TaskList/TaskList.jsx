@@ -13,6 +13,7 @@ const TaskList = ({ tareas, onToggleCompletar, onEliminar, onEditar }) => {
       <Grid item xs={12}>
         {tareas.map((tarea) => (
           <TaskItem
+            key={tarea.id}
             tareaId={tarea.id}
             nombre={tarea.nombre}
             completada={tarea.completada}

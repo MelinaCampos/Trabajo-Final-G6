@@ -15,7 +15,6 @@ const App = () => {
     return storedTareas || [];
   });
 
-
   //Guardar tarea en localStorage cada que actualiza
   useEffect(() => {
     localStorage.setItem('tareas', JSON.stringify(tareas));
@@ -35,8 +34,7 @@ const App = () => {
     const tareaExistente = tareas.find(tarea => tarea.nombre === nombreTarea);
 
     if (tareaExistente) {
-      alert("Ya existe una tarea con el mismo nombre");
-      return;
+      return alert("Ya existe una tarea con el mismo nombre");;
     }
 
     const nuevaTarea = {
@@ -44,14 +42,6 @@ const App = () => {
       nombre: nombreTarea,
       completada: false,
     };
-
-    /*const agregarTarea = (nombreTarea) => {
-      const nuevaTarea = {
-        id: tareas.length + 1,
-        nombre: nombreTarea,
-        completada: false,
-      };*/
-
     setTareas((tareasPrevias) => [...tareasPrevias, nuevaTarea]);
   };
 
@@ -64,8 +54,6 @@ const App = () => {
   };
 
   const handleEliminar = (taskId) => {
-    //setTareas((tareasPrevias) => tareasPrevias.filter((tarea) => tarea.id !== taskId));
-
     const tareaEliminada = tareas.find((tarea => tarea.id === taskId));
     if (tareaEliminada) {
       setTareasEliminadas((tareasEliminadasPrevias) => [...tareasEliminadasPrevias, tareaEliminada]);
@@ -82,11 +70,9 @@ const App = () => {
     return tareas.length - countCompletadas();
   };
 
-
   const mostrarTareasEliminadas = () => {
     if (tareasEliminadas.length === 0) {
       alert("No hay tareas eliminadas");
-      return;
     }
 
     alert("Tareas eliminadas:\n" + tareasEliminadas.map(tarea => tarea.nombre).join('\n'));
@@ -101,11 +87,12 @@ const App = () => {
   };
 
   return (
-    <Grid container spacing={3} sx={{ boxShadow: 3,bgcolor: '#e6fcff' }}style={{
+    <Grid container spacing={3} sx={{ boxShadow: 3,bgcolor: 'rgb(43, 44, 44)' }}style={{
       margin: 'auto',
       width: '1000px',
       height: 'auto',
-      minHeight: '400px'
+      minHeight: '400px',
+      borderRadius:'0.5rem'
     }}>
       <Grid item xs={12}>
         <Typography variant='h2'>Lista de Tareas</Typography>

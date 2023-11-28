@@ -41,26 +41,24 @@ const TaskItem = ({
       container
       justifyContent="center"
       style={{
-        textDecoration: completada ? "line-through" : "none",
-        width: "700px",
+        width: "600px",
         height: "57px",
         marginLeft: "auto",
         marginRight: "auto",
         marginBottom: "20px",
         alignItems: "center",
       }}
-      sx={{ p: 1, borderRadius: 4, bgcolor: "#1565c0", m: 1 }}
+      sx={{ p: 1, borderRadius: 4, bgcolor: '#3E8ADF ', m: 1 }}
     >
       {isEditando ? (
         <>
-          <Grid item alignItems="center" xs={12} md={9} sx={{ color: "white" }}>
+          <Grid item alignItems="center" xs={12} md={9} >
             <TextField
               size="small"
-              label="Editar Tarea"
               value={editadoNombreTarea}
               onChange={handleCambiarInput}
-              sx={{ width: "40%", backgroundColor: "Highlight" }}
-              />
+              sx={{ width: "90%", backgroundColor: "white", borderRadius: '5px' }}
+            />
           </Grid>
           <Grid item xs={6} md={2}>
             <IconButton aria-label="Guardar" onClick={handleGuardar}>
@@ -84,7 +82,13 @@ const TaskItem = ({
             </ToggleButton>
           </Grid>
           <Grid item alignItems="center" xs={12} md={9} sx={{ color: "white" }}>
-            <span style={{ fontSize: "1.15rem", margin: "auto" }}>
+            <span style={{
+              fontSize: "1.25rem",
+              margin: "auto",
+              textDecoration: completada ? "line-through" : "none",
+              color: "black",
+              fontWeight: "450"
+            }} title={nombre}>
               {nombre.length > 20 ? `${nombre.slice(0, 20)}...` : nombre}
             </span>
           </Grid>

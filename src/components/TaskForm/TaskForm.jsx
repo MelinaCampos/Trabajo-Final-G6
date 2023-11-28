@@ -13,9 +13,8 @@ const TaskForm = ({ onAgregarTarea }) => { // se pasa la prop desde el app de la
         e.preventDefault();
 
         if (nombreTarea.trim() === '') { //evita que se agreguen tareas vacias
-            return;
+            return alert("El campo esta vacio");
         }
-
         onAgregarTarea(nombreTarea);
         setNombreTarea(''); //limpia el input una vez enviado
     };
@@ -27,16 +26,16 @@ const TaskForm = ({ onAgregarTarea }) => { // se pasa la prop desde el app de la
               <Grid item xs={12}>
                 <label>
                     <TextField
-                        size="medium"
-                        label="Nueva Tarea"
+                        size="small"
+                        label='Nueva Tarea'
                         value={nombreTarea}
                         onChange={handleChange}
-                        sx={{ width: '40%', bgcolor: 'white' }}
+                        sx={{ width: '40%', bgcolor: 'white', borderRadius:'5px', borderColor:'white'}}
                     />
                 </label>
               </Grid>
               <Grid item xs={12}>
-                <Button size="large" color="primary" variant="contained" type="submit" sx={{ p: 1, width: '40%' }}>Agregar Tarea</Button>
+                <Button size="large" color="primary" variant="contained" type="submit" sx={{ p: 1, width: '40%',height:'50px', borderRadius:'5px', marginTop:'10px' }}>Agregar Tarea</Button>
               </Grid>
             </Grid>
         </form>
